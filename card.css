@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Gowun Dodum', sans-serif;
+  background-color: #f0f4f8; /* 베이스는 차분한 그레이시 블루 */
+  overflow: hidden;
+  position: relative;
+}
+
+/* 🎨 배경에서 움직이는 큰 원들 */
+.bg-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  filter: blur(80px); /* 원들을 뭉개서 구름처럼 만듦 */
+}
+
+.blob {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  animation: move 20s alternate infinite;
+}
+
+/* 첫 번째 원: 캐릭터 머리칼의 연노랑 (눈 안아픈 톤) */
+.blob.yellow {
+  background: #fff9e6;
+  top: -10%;
+  left: -10%;
+  animation-duration: 25s;
+}
+
+/* 두 번째 원: 캐릭터 눈동자의 하늘색 */
+.blob.blue {
+  background: #d0ebff;
+  bottom: -10%;
+  right: -10%;
+  animation-duration: 18s;
+}
+
+/* 세 번째 원: 강조 포인트 핑크 */
+.blob.pink {
+  background: #f3d9fa;
+  top: 40%;
+  right: 10%;
+  animation-duration: 22s;
+}
+
+@keyframes move {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(100px, 100px) scale(1.2); }
+}
+
+
+
+.bg-box{
+  background-color: rgb(170, 222, 247);
+  width: 350px;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+  text-align: center; /* 카드 안의 모든 요소를 가운데 정렬 */
+}
+
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%; /* 50%를 주면 완벽한 원이 됩니다 */
+  object-fit: cover;
+  margin-bottom: 30px;
+  border: 3px solid #fcfbb9; /* 테두리 색상 */
+}
+
+.name {
+  /* 글자 색상, 크기, 굵기를 변경해보세요 */
+  color: #1f2937;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.job-title {
+  /* 글자 색상을 회색 톤으로 바꾸고 살짝 띄워보세요 */
+  color: #c990bf; /* 메인 테마색인 초록색 사용 */
+  font-size: 14px;
+  letter-spacing: 2px; /* 자간(글자 사이 간격) 넓히기 */
+  margin-bottom: 20px;
+}
+
+.about-me {
+  color: #4b5563;
+  font-size: 15px;
+  line-height: 1.6; /* 줄 간격 넓혀서 가독성 높이기 */
+  margin-bottom: 30px;
+  text-align: left; /* 본문만 왼쪽 정렬로 변경 */
+  word-break: keep-all; /* 단어 단위로 줄바꿈 (한글 가독성에 좋음) */
+}
+
+.contact-info {
+  display: inline-block;
+  background-color: #f3f4f6;
+  color: #374151;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 13px;
+  margin: 5px;
+  text-decoration: none; /* 링크 밑줄 제거 */
+}
+
+/* 연락처에 마우스 올렸을 때 효과 */
+.contact-info:hover {
+  background-color: #10b981;
+  color: white;
+}
